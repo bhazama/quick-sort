@@ -40,6 +40,32 @@ function sortingFunctions(){
 
 }
 
+//SECOND WAY OF SOLVING QUICKSORT
+/*function quicksort(arr) {
+  // base case: if arr.length < 2, return arr
+  if (arr.length < 2) { return arr; }
+
+  // I will always pick first index
+  var pivot = arr.shift();
+
+  // loop through the array
+  var left = [];
+  var right = [];
+  while (arr.length) {
+    var current = arr.shift();
+    // less than pivot goes left
+    if (current < pivot) { left.push(current); }
+    // greater than pivot goes right
+    else { right.push(current); }
+  }
+
+  // return concat [ left, pivot, right ]
+  var sortedLeft = quicksort(left);
+  var sortedRight = quicksort(right);
+  return sortedLeft.concat(pivot, sortedRight);
+}
+*/
+
 
 
   function selectionSort(arr){
