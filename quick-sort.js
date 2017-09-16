@@ -9,53 +9,35 @@ function sortingFunctions(){
   };
 
 
-
-
   function quickSort(arr){
-
-    var pivot = arr[arr.length - 1];
-    var lessArr = [];
-    var greaterArr = [];
-    var lessThanArr = [];
-    var greaterThanArr = [];
-    var sortedArr = [];
-    console.log(pivot);
+    //break case: when nothing is left in the array after splicing it out (pivot)
     if(arr.length === 0){
       return arr;
     }
+
+    //takes out the first number in array and stores it as pivot.
+    var pivot = arr.splice(0,1)[0];
+    var lessThanArr = [];
+    var greaterThanArr = [];
+    //console.log("PIVOT: ", pivot);
+    //console.log("ARR: ", arr);
+
+    //checks if each element in array is less than / greater than pivot.
     for(var i = 0; i < arr.length; i++){
       if(arr[i] < pivot){
         lessThanArr.push(arr[i]);
         //console.log(arr[i]);
-      }else if (arr[i] > pivot){
-        greaterThanArr.push(arr[i]);
-      }
-    }
-    if(lessThanArr === false){
-        pivot = greaterThanArr[greaterThanArr.length - 1];
-      }else {
-        pivot = lessThanArr[lessThanArr.length - 1];
+      }else{greaterThanArr.push(arr[i]);
+        }
       }
 
-      lessArr = lessThanArr;
-      greaterArr = greaterThanArr;
-
-    console.log(pivot);
-    //console.log(lessThanArr);
-    //console.log(greaterThanArr);
-    console.log(lessArr);
-    console.log(greaterArr);
+    //recursively does the quickSort function for less than subArray
+    //then concats this to the pivot and the quickSort(ed) greater than subArray
+    return quickSort(lessThanArr).concat(pivot, quickSort(greaterThanArr));
 
 
 
-      //return quickSort(lessArr).concat(pivot,quickSort(greaterArr));
-
-
-
-
-
-
-  }
+}
 
 
 
@@ -69,4 +51,4 @@ function sortingFunctions(){
 }
 
 var sort = sortingFunctions();
-sort.quickSort(arrayz);
+console.log(sort.quickSort(arrayz));
