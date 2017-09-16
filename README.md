@@ -8,7 +8,7 @@ Explanation:
 5. Repeat until all elements are sorted.
 6. Combine elements back together from the bottom (by less than or greater than) to create a sorted list.
 
-   Ex:            [2, 5, 7, 4, 3, 6]                           COMBINE
+   Ex:            [5, 2, 7, 4, 3, 6]                           COMBINE
 
    PIVOT 6:                 *6*                             [2, 3, 4, 5, 6, 7]
            [ 2, 5, 4, 3]           [7]
@@ -21,3 +21,8 @@ Explanation:
 
 BEST CASE SCENARIO: logarithmic time. Highly efficient. Operation time decreases as instances increase.
 WORSE CASE SCENARIO: quadratic time. Not very efficient. Max operations = square of input.
+
+
+
+[5,2,7,4,3,6];
+

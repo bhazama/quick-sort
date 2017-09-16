@@ -1,11 +1,12 @@
 
-var arrayz = [2, 5, 7, 4, 3, 6];
+var arrayz = [5, 2, 7, 4, 3, 6];
 
 
 function sortingFunctions(){
 
   return{
-    quickSort : quickSort
+    quickSort : quickSort,
+    selectionSort : selectionSort,
   };
 
 
@@ -41,9 +42,36 @@ function sortingFunctions(){
 
 
 
-  function bubbleSort(){
+  function selectionSort(arr){
+    var start = arr[0];
+    var emptyArr = [];
+    var key;
+    var newkey;
+    var min = Math.min(arr);
+    console.log(min);
+    //console.log("MIN:",min);
+    //var newArr = [];
+    //var min = Math.min(arr);
+    //var key;
+    //console.log(key);
+    for(var i = 1; i < arr.length; i++){
+      if(start > arr[i]){
+
+      }
+
+    }
+
+
+   //return min;
 
   }
+
+  function mergeSort(arr){
+
+
+
+  }
+
 
 
 
@@ -52,3 +80,4 @@ function sortingFunctions(){
 
 var sort = sortingFunctions();
 console.log(sort.quickSort(arrayz));
+//console.log(sort.selectionSort(arrayz));
